@@ -8,9 +8,10 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello AoC2021")
-	fmt.Println("Sonar Sweep: ", sonar_sweep.Sweep())
-	fmt.Println("Sonar Sweep (Sliding): ", sonar_sweep.SlidingSweep())
-	fmt.Println("Dive: ", dive.Navigate())
-	fmt.Println("Dive (With Aim): ", dive.NavigateWithAim())
+	fmt.Println("AoC2021")
+	fmt.Println("-------")
+	fmt.Println("Day 1, Sonar Sweep: ", sonar_sweep.Sweep())
+	fmt.Println("Day 1, Sonar Sweep (Sliding): ", sonar_sweep.SlidingSweep())
+	fmt.Println("Day 2, Dive: ", dive.Navigate())
+	fmt.Println("Day 2, Dive (With Aim): ", dive.NavigateWithAim())
 }
