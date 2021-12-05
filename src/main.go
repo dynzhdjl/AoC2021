@@ -16,4 +16,5 @@ func main() {
 	fmt.Println("Day 2, Dive: ", dive.Navigate())
 	fmt.Println("Day 2, Dive (With Aim): ", dive.NavigateWithAim())
 	fmt.Println("Day 3, Diagnostic (Energy Consumption): ", binary_diagnostic.GetEnergyConsumption())
+	fmt.Println("Day 3, Diagnostic (Life Support): ", binary_diagnostic.GetLifeSupportRating())
 }
