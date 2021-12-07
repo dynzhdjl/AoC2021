@@ -8,12 +8,12 @@ import (
 )
 
 type Card struct {
-	Grid   [5][5]int
-	Marked map[[2]int]int
+	grid   [5][5]int
+	marked map[[2]int]int
 }
 
 func (c *Card) markSlot(slot [2]int) (bool, int) {
-	c.Marked[slot] = c.Grid[slot[0]][slot[1]]
+	c.marked[slot] = c.grid[slot[0]][slot[1]]
 	isWinner := c.isWinner(slot)
 	if isWinner {
 		return isWinner, c.getScore(slot)
@@ -23,27 +23,27 @@ func (c *Card) markSlot(slot [2]int) (bool, int) {
 
 func (c *Card) getScore(slot [2]int) int {
 	score := 0
-	n := len(c.Grid)
+	n := len(c.grid)
 	for row := 0; row < n; row++ {
 		for col := 0; col < n; col++ {
-			if _, ok := c.Marked[[2]int{row, col}]; !ok {
-				score += c.Grid[row][col]
+			if _, ok := c.marked[[2]int{row, col}]; !ok {
+				score += c.grid[row][col]
 			}
 		}
 	}
-	return score * c.Grid[slot[0]][slot[1]]
+	return score * c.grid[slot[0]][slot[1]]
 }
 
 func (c *Card) isWinner(slot [2]int) bool {
-	n := len(c.Grid)
-	if len(c.Marked) < n {
+	n := len(c.grid)
+	if len(c.marked) < n {
 		return false
 	}
 	row := slot[0]
 	col := slot[1]
 	isWinner := true
 	for i := 0; i < n; i++ {
-		if _, ok := c.Marked[[2]int{row, i}]; !ok {
+		if _, ok := c.marked[[2]int{row, i}]; !ok {
 			isWinner = false
 		}
 	}
@@ -51,7 +51,7 @@ func (c *Card) isWinner(slot [2]int) bool {
 		return isWinner
 	}
 	for i := 0; i < n; i++ {
-		if _, ok := c.Marked[[2]int{i, col}]; !ok {
+		if _, ok := c.marked[[2]int{i, col}]; !ok {
 			isWinner = false
 		}
 	}
@@ -80,7 +80,7 @@ func WinnerScore() int {
 				cols := strings.Fields(input[row+i])
 				for j := 0; j < len(cols); j++ {
 					v, _ := strconv.Atoi(cols[j])
-					c.Grid[row][j] = v
+					c.grid[row][j] = v
 					if index, ok := cardIndex[v]; ok {
 						*index = append(*index, CardIndex{c, [2]int{row, j}})
 					} else {
@@ -95,9 +95,9 @@ func WinnerScore() int {
 	winner := false
 	score := 0
 	for i := 0; i < len(draws); i++ {
-		if cards, ok := cardIndex[draws[i]]; ok {
-			for _, c := range *cards {
-				winner, score = c.card.markSlot(c.slot)
+		if index, ok := cardIndex[draws[i]]; ok {
+			for _, i := range *index {
+				winner, score = i.card.markSlot(i.slot)
 				if winner {
 					return score
 				}
