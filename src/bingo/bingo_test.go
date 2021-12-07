@@ -33,7 +33,7 @@ func TestBingoIsWinner(t *testing.T) {
 
 	//7,4,9,5,11,17,23,2,0,14,21,24
 
-	card := Card{cards[2], map[[2]int]int{}}
+	card := Card{cards[2], map[[2]int]int{}, false}
 	winner, score := card.markSlot([2]int{4, 4})
 	expectedWinner := false
 	expectedScore := -1
