@@ -1,7 +1,6 @@
 package crazy_crabs
 
 import (
-	"fmt"
 	"sort"
 	"strconv"
 	"strings"
@@ -28,7 +27,6 @@ func initilize(file string) ([]int, int, int) {
 
 func align(positions []int, min, max int) int {
 	sort.Ints(positions)
-	fmt.Println(positions[499], positions[500], positions[501], len(positions))
 	return (positions[49] + positions[50]) / 2
 }
 

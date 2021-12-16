@@ -10,6 +10,7 @@ import (
 	"github.com/dynzhdjl/AoC2021/hydrothermal_venture"
 	"github.com/dynzhdjl/AoC2021/lanternfish"
 	"github.com/dynzhdjl/AoC2021/seven_segment"
+	"github.com/dynzhdjl/AoC2021/smoke_basin"
 	"github.com/dynzhdjl/AoC2021/sonar_sweep"
 )
 
@@ -27,4 +28,6 @@ func main() {
 	fmt.Println("Day 6, Lanternfish:", lanternfish.Population(256, 6, 2))
 	fmt.Println("Day 7, Crazy Carbs Horizontal Alignment:", crazy_crabs.HorizontalAlignmentPosition())
 	fmt.Println("Day 8, Seven Segment Search: ", seven_segment.Decode())
+	fmt.Println("Day 9, Smoke Basin (Risk): ", smoke_basin.CalculateRisk())
+	fmt.Println("Day 9, Smoke Basin (Biggest Basin): ", smoke_basin.FindBiggestBasin())
 }
