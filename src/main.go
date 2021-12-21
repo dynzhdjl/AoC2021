@@ -12,6 +12,7 @@ import (
 	"github.com/dynzhdjl/AoC2021/seven_segment"
 	"github.com/dynzhdjl/AoC2021/smoke_basin"
 	"github.com/dynzhdjl/AoC2021/sonar_sweep"
+	"github.com/dynzhdjl/AoC2021/syntax_scoring"
 )
 
 func main() {
@@ -30,4 +31,6 @@ func main() {
 	fmt.Println("Day 8, Seven Segment Search: ", seven_segment.Decode())
 	fmt.Println("Day 9, Smoke Basin (Risk): ", smoke_basin.CalculateRisk())
 	fmt.Println("Day 9, Smoke Basin (Biggest Basin): ", smoke_basin.FindBiggestBasin())
+	fmt.Println("Day 10, Syntax Scoring: ", syntax_scoring.CalculateSyntaxCheckerScore())
+	fmt.Println("Day 10, Autocomplete Scoring: ", syntax_scoring.CalculateAutoCompleteScore())
 }

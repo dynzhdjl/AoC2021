@@ -69,7 +69,6 @@ func getHightMap(file string) [][]int {
 
 func FindBiggestBasin() int {
 	m := getHightMap("smoke_basin/input.txt")
-
 	largestAreas := []int{0}
 	for _, v := range lowPoints(m) {
 		area := explore(m, v[0], v[1])

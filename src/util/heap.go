@@ -1,4 +1,4 @@
-package heap
+package util
 
 func MinHeap(arr []int) []int {
 	heap := []int{}
