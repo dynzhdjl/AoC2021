@@ -7,6 +7,7 @@ import (
 	"github.com/dynzhdjl/AoC2021/bingo"
 	"github.com/dynzhdjl/AoC2021/crazy_crabs"
 	"github.com/dynzhdjl/AoC2021/dive"
+	"github.com/dynzhdjl/AoC2021/dumbo_octopus"
 	"github.com/dynzhdjl/AoC2021/hydrothermal_venture"
 	"github.com/dynzhdjl/AoC2021/lanternfish"
 	"github.com/dynzhdjl/AoC2021/seven_segment"
@@ -33,4 +34,6 @@ func main() {
 	fmt.Println("Day 9, Smoke Basin (Biggest Basin): ", smoke_basin.FindBiggestBasin())
 	fmt.Println("Day 10, Syntax Scoring: ", syntax_scoring.CalculateSyntaxCheckerScore())
 	fmt.Println("Day 10, Autocomplete Scoring: ", syntax_scoring.CalculateAutoCompleteScore())
+	fmt.Println("Day 11, Dumbo Octopus (Flash Count): ", dumbo_octopus.CountFlashes(100))
+	fmt.Println("Day 11, Dumbo Octopus (Sync Step): ", dumbo_octopus.FindSyncronizationStep())
 }
