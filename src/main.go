@@ -37,4 +37,5 @@ func main() {
 	fmt.Println("Day 11, Dumbo Octopus (Flash Count): ", dumbo_octopus.CountFlashes(100))
 	fmt.Println("Day 11, Dumbo Octopus (Sync Step): ", dumbo_octopus.FindSyncronizationStep())
 	fmt.Println("Day 12, Passage Pathing (Unique Path Count): ", passage_pathing.PathCount())
+	fmt.Println("Day 12, Passage Pathing (Unique Path Allowed Twice Count): ", passage_pathing.PathAllowedTwiceCount())
 }

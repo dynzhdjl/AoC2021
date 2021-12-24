@@ -29,6 +29,37 @@ func getNumberOfPaths(graph map[string][]string, from, to string, visits map[str
 	return cnt
 }
 
+func getNumberOfPathsV2(graph map[string][]string, from, to string, visits map[string]int) int {
+	cnt := 0
+	var walk func(string, bool)
+	walk = func(current string, allowedTwice bool) {
+		if current == to {
+			cnt++
+			return
+		}
+		visitCnt, ok := visits[current]
+		if ok {
+			if current == "start" && visitCnt > 0 {
+				return
+			}
+			if !startsWithUpper(current) && visitCnt > 0 && !allowedTwice {
+				return
+			}
+			if !startsWithUpper(current) && visitCnt == 1 {
+				allowedTwice = false
+			}
+		}
+		visits[current]++
+		adjacents, _ := graph[current]
+		for _, adjacent := range adjacents {
+			walk(adjacent, allowedTwice)
+		}
+		visits[current]--
+	}
+	walk(from, true)
+	return cnt
+}
+
 func createAdjancenyList(input []string) map[string][]string {
 	g := map[string][]string{}
 	for _, edge := range input {
@@ -57,4 +88,10 @@ func PathCount() int {
 	intput := util.Read("passage_pathing/input.txt")
 	g := createAdjancenyList(intput)
 	return getNumberOfPaths(g, "start", "end", map[string]bool{})
+}
+
+func PathAllowedTwiceCount() int {
+	intput := util.Read("passage_pathing/input.txt")
+	g := createAdjancenyList(intput)
+	return getNumberOfPathsV2(g, "start", "end", map[string]int{})
 }

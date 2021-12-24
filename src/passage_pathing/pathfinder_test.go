@@ -15,9 +15,16 @@ func TestPathFinder(t *testing.T) {
 		"d":     []string{"b"},
 	}
 
-	visited := map[string]bool{}
+	visits := map[string]bool{}
 	expected := 10
-	got := getNumberOfPaths(g, "start", "end", visited)
+	got := getNumberOfPaths(g, "start", "end", visits)
+	if got != expected {
+		t.Errorf("expected: %v, got: %v", expected, got)
+	}
+
+	visitsV2 := map[string]int{}
+	expected = 36
+	got = getNumberOfPathsV2(g, "start", "end", visitsV2)
 	if got != expected {
 		t.Errorf("expected: %v, got: %v", expected, got)
 	}
