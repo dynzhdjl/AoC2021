@@ -14,6 +14,7 @@ import (
 	"github.com/dynzhdjl/AoC2021/smoke_basin"
 	"github.com/dynzhdjl/AoC2021/sonar_sweep"
 	"github.com/dynzhdjl/AoC2021/syntax_scoring"
+	"github.com/dynzhdjl/AoC2021/transparent_origami"
 )
 
 func main() {
@@ -38,4 +39,5 @@ func main() {
 	fmt.Println("Day 11, Dumbo Octopus (Sync Step): ", dumbo_octopus.FindSyncronizationStep())
 	fmt.Println("Day 12, Passage Pathing (Unique Path Count): ", passage_pathing.PathCount())
 	fmt.Println("Day 12, Passage Pathing (Unique Path Allowed Twice Count): ", passage_pathing.PathAllowedTwiceCount())
+	fmt.Println("Day 13, Transparent Origami: ", transparent_origami.Count())
 }
