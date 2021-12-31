@@ -101,10 +101,11 @@ func (p Paper) applyInstruction(start, end [2]int, i FoldingInsturction) ([2]int
 	return ns, ne
 }
 
-func Count() int {
+func Fold() int {
 	dots, m, n, instuctions := parseRawData(util.Read("transparent_origami/input.txt"))
 	var paper Paper
 	paper = make([][]int, m)
+
 	for i := range paper {
 		paper[i] = make([]int, n)
 	}
@@ -114,13 +115,15 @@ func Count() int {
 	}
 
 	start, end := [2]int{0, 0}, [2]int{len(paper) - 1, len(paper[0]) - 1}
+
 	for _, instruction := range instuctions {
 		start, end = paper.applyInstruction(start, end, instruction)
 	}
+	fmt.Println("Day 13, Transparent Origami: ")
 	for y := start[0]; y <= end[0]; y++ {
 		for x := start[1]; x <= end[1]; x++ {
 			if paper[y][x] == 1 {
-				fmt.Print("#")
+				fmt.Print("&")
 			} else {
 				fmt.Print(" ")
 			}

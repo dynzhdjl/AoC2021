@@ -7,6 +7,7 @@ import (
 	"github.com/dynzhdjl/AoC2021/bingo"
 	"github.com/dynzhdjl/AoC2021/dive"
 	"github.com/dynzhdjl/AoC2021/dumbo_octopus"
+	"github.com/dynzhdjl/AoC2021/extended_polymerization"
 	"github.com/dynzhdjl/AoC2021/hydrothermal_venture"
 	"github.com/dynzhdjl/AoC2021/lanternfish"
 	"github.com/dynzhdjl/AoC2021/passage_pathing"
@@ -39,5 +40,7 @@ func main() {
 	fmt.Println("Day 11, Dumbo Octopus (Sync Step): ", dumbo_octopus.FindSyncronizationStep())
 	fmt.Println("Day 12, Passage Pathing (Unique Path Count): ", passage_pathing.PathCount())
 	fmt.Println("Day 12, Passage Pathing (Unique Path Allowed Twice Count): ", passage_pathing.PathAllowedTwiceCount())
-	fmt.Println("Day 13, Transparent Origami: ", transparent_origami.Count())
+	transparent_origami.Fold()
+	fmt.Println("Day 14, Extended Polymerization (10 Steps): ", extended_polymerization.Diff(10))
+	fmt.Println("Day 14, Extended Polymerization (40 Steps): ", extended_polymerization.Diff(40))
 }
