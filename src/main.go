@@ -5,6 +5,7 @@ import (
 
 	"github.com/dynzhdjl/AoC2021/binary_diagnostic"
 	"github.com/dynzhdjl/AoC2021/bingo"
+	"github.com/dynzhdjl/AoC2021/chiton"
 	"github.com/dynzhdjl/AoC2021/dive"
 	"github.com/dynzhdjl/AoC2021/dumbo_octopus"
 	"github.com/dynzhdjl/AoC2021/extended_polymerization"
@@ -43,4 +44,6 @@ func main() {
 	transparent_origami.Fold()
 	fmt.Println("Day 14, Extended Polymerization (10 Steps): ", extended_polymerization.Diff(10))
 	fmt.Println("Day 14, Extended Polymerization (40 Steps): ", extended_polymerization.Diff(40))
+	fmt.Println("Day 15, Chiton: ", chiton.Calculate())
+	fmt.Println("Day 15, Chiton (5x): ", chiton.Calculate5x())
 }
